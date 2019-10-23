@@ -1,8 +1,4 @@
 apply plugin: 'com.android.library'
-def extraLibraryFile = new File("${project.projectDir}/extraLibraries.gradle")
-if (extraLibraryFile.exists()) {
-    apply from: "${project.projectDir}/extraLibraries.gradle"
-}
 
 android {
     compileSdkVersion 29
@@ -40,13 +36,14 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
-    if (extraLibraryFile.exists()) {
-        extraLibrary.each { implementation it }
-    }
+    // KLog
+    implementation 'com.github.zhaokaiqiang.klog:library:1.6.0'
+    // BLE scanning (Nordic)
+    implementation 'no.nordicsemi.android.support.v18:scanner:1.4.0'
 }
 

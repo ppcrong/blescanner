@@ -1,8 +1,0 @@
-ext {
-    extraLibrary = [
-            // KLog
-            'com.github.zhaokaiqiang.klog:library:1.6.0',
-            // BLE scanning (Nordic)
-            'no.nordicsemi.android.support.v18:scanner:1.4.0'
-    ]
-}
